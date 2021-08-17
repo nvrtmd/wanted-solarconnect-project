@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
-import { Clock } from 'Utils/Clock'
+import { clock } from 'Utils/Clock'
+
 export default function Timer({ korea, us }) {
-  const [clock, setClock] = useState({ koreaClock: null, usClock: null })
+  const [time, setTime] = useState({ koreaTime: null, usTime: null })
 
   useEffect(() => {
-    Clock(setClock)
+    clock(setTime)
   }, [])
 
   setInterval(() => {
-    Clock(setClock)
+    clock(setTime)
   }, 60000)
 
   return (
     <Root>
-      {us && <div>{clock.usClock}</div>}
-      {korea && <div>{clock.koreaClock}</div>}
+      {us && <div>{time.usTime}</div>}
+      {korea && <div>{time.koreaTime}</div>}
     </Root>
   )
 }

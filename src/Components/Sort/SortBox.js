@@ -1,14 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { Sort } from 'Utils/Sort'
-export default function SortBox({ sendNumArr, mode }) {
-  let targetArr = sendNumArr.slice()
-  const defaultValue = mode
-  const sortedArray = Sort(targetArr, mode)
-  const sortingData =
-    sortedArray.length > 0 ? sortedArray.join(', ') : defaultValue
+import { sort } from 'Utils/Sort'
+export default function SortBox({ numArray, mode }) {
+  const sortedArray = sort(numArray, mode)
+  const value = sortedArray.length ? sortedArray.join(', ') : mode
 
-  return <SortWrapper>{sortingData}</SortWrapper>
+  return <SortWrapper>{value}</SortWrapper>
 }
 
 const SortWrapper = styled.div`

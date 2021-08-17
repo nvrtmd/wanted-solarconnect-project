@@ -1,42 +1,21 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import Timer from 'Components/Timer/Timer'
-import Input from 'Components/Input/Input'
+import InputBox from 'Components/Input/InputBox'
 import SortBox from 'Components/Sort/SortBox'
-import { isValidateNumber } from 'Utils/Regex'
 
 export default function Main() {
-  const [sendNumArr, setSendNumArr] = useState([])
-
-  const handleSortClick = () => {
-    const validateNumArr = sendNumArr.filter(isValidateNumber).map(Number)
-    setSendNumArr(validateNumArr)
-  }
+  const [numArray, setNumArray] = useState([])
 
   return (
     <Root>
       <div>
         <Timer korea />
-        <SortBox
-          sendNumArr={sendNumArr}
-          setSendNumArr={setSendNumArr}
-          mode="Ascending sort"
-        />
+        <SortBox numArray={numArray} mode="Ascending sort" />
         <InputContainer>
-          <Input setSendNumArr={setSendNumArr} />
-          <SortBtn
-            onClick={() => {
-              handleSortClick()
-            }}
-          >
-            SORT
-          </SortBtn>
+          <InputBox setNumArray={setNumArray} />
         </InputContainer>
-        <SortBox
-          sendNumArr={sendNumArr}
-          setSendNumArr={setSendNumArr}
-          mode="Descending sort"
-        />
+        <SortBox numArray={numArray} mode="Descending sort" />
         <Timer us />
       </div>
     </Root>
@@ -56,20 +35,4 @@ const InputContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
-
-const SortBtn = styled.div`
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #d8d7dd;
-  color: #000;
-  padding: 15px;
-  border-radius: 20px;
-  display: inline-block;
-  border: none;
-  transition: all 0.4s ease 0s;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-  }
 `

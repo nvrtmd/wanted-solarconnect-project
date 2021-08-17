@@ -1,4 +1,4 @@
-export function Sort(targetArr, mode) {
+export function sort(targetArr, mode) {
   const swap = (index) => {
     let temp = targetArr[index + 1]
     targetArr[index + 1] = targetArr[index]
