@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import Timer from 'Components/Timer/Timer'
 import Input from 'Components/Input/Input'
-import Sort from 'Components/Sort/Sort'
-import { isValidateNumber } from 'Utils/utils'
+import SortBox from 'Components/Sort/SortBox'
+import { isValidateNumber } from 'Utils/Regex'
 
 export default function Main() {
   const [sendNumArr, setSendNumArr] = useState([])
@@ -17,7 +17,7 @@ export default function Main() {
     <Root>
       <div>
         <Timer korea />
-        <Sort
+        <SortBox
           sendNumArr={sendNumArr}
           setSendNumArr={setSendNumArr}
           mode="Ascending sort"
@@ -32,7 +32,7 @@ export default function Main() {
             SORT
           </SortBtn>
         </InputContainer>
-        <Sort
+        <SortBox
           sendNumArr={sendNumArr}
           setSendNumArr={setSendNumArr}
           mode="Descending sort"
@@ -67,26 +67,6 @@ const SortBtn = styled.div`
   border: none;
   transition: all 0.4s ease 0s;
   cursor: pointer;
-  font-weight: 700;
-
-  &:hover {
-    box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-  }
-`
-
-const ResetBtn = styled(SortBtn)`
-  color: #fff !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #0090b2;
-  padding: 15px;
-  border-radius: 20px;
-  display: inline-block;
-  border: none;
-  transition: all 0.4s ease 0s;
-  cursor: pointer;
-  font-weight: 700;
-
   &:hover {
     box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
   }

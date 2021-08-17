@@ -27,7 +27,7 @@ const InputBox = styled.input`
   background-color: white;
   background-image: url('https://ifh.cc/g/EDgulH.png');
   background-size: 25px;
-  background-position: 13px 8px;
+  background-position: 13px 9px;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 47px;
   transition: all 0.45s ease 0s;

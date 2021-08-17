@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     /* font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; */
     font-family: 'GmarketSansLight';
     font-size: 14px;
+    font-weight: 700;
     line-height: 1.43;
     color: #484848;
     background-color: #fff;
