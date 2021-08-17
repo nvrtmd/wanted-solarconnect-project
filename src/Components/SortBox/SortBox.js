@@ -6,7 +6,7 @@ export default function SortBox({ numArray, mode }) {
   useEffect(() => {
     const sortedArray = sort(numArray, mode)
     const value = sortedArray.length ? sortedArray.join(', ') : mode
-    if (mode === 'Descending sort') {
+    if (sortedArray.length && mode === 'Descending sort') {
       setTimeout(() => {
         setValue(value)
       }, 3000)
