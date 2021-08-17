@@ -9,6 +9,7 @@ export default function Input({ inputNum, setInputNum }) {
   return (
     <div>
       <InputBox
+        value={inputNum}
         onChange={(e) => {
           handleChange(e)
         }}

@@ -1,7 +1,9 @@
 import styled from 'styled-components/macro'
 
 export default function Sort({ sendNum, setSendNum, mode }) {
-  let targetArr = sendNum.split(',')
+  let targetArr = sendNum.split(',').map(function (num) {
+    return parseInt(num)
+  })
 
   const swap = (index) => {
     let temp = targetArr[index + 1]
@@ -25,7 +27,7 @@ export default function Sort({ sendNum, setSendNum, mode }) {
     }
     return targetArr.join(`, `)
   }
-  return <Root>{sort() ? sort() : <div>{mode}</div>}</Root>
+  return <Root>{sendNum ? sort() : <div>{mode}</div>}</Root>
 }
 
 const Root = styled.div`
