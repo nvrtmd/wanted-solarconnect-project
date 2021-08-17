@@ -11,10 +11,10 @@ export default function Main() {
     <Root>
       <div>
         <Timer korea />
-        <SortBox numArray={numArray} mode="Ascending sort" />
         <InputContainer>
           <InputBox setNumArray={setNumArray} />
         </InputContainer>
+        <SortBox numArray={numArray} mode="Ascending sort" />
         <SortBox numArray={numArray} mode="Descending sort" />
         <Timer us />
       </div>
