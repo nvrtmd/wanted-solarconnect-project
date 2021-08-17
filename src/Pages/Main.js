@@ -48,6 +48,8 @@ const Root = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  /* background-image: url('https://ifh.cc/g/2dWJ1b.jpg'); */
+  background-image: url('https://ifh.cc/g/89QUef.jpg');
 `
 
 const InputContainer = styled.div`
@@ -57,10 +59,10 @@ const InputContainer = styled.div`
 `
 
 const SortBtn = styled.div`
-  color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  background: #0090b2;
+  background: #d8d7dd;
+  color: #000;
   padding: 15px;
   border-radius: 20px;
   display: inline-block;

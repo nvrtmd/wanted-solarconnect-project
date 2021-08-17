@@ -12,6 +12,7 @@ export default function SortBox({ sendNumArr, mode }) {
 }
 
 const SortWrapper = styled.div`
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
