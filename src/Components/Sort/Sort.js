@@ -28,7 +28,10 @@ export default function Sort({ sendNumsArr, mode }) {
     return targetArr
   }
 
-  const sortingData = sort().length > 0 ? sort().join(', ') : mode
+  const defualtValue = mode
+  const sortedArray = sort()
+  const sortingData =
+    sortedArray.length > 0 ? sortedArray.join(', ') : defualtValue
 
   return <SortWrapper>{sortingData}</SortWrapper>
 }
