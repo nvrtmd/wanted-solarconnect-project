@@ -65,5 +65,7 @@ const SortBtn = styled.div`
   cursor: pointer;
   &:hover {
     box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    background: #0090b2;
+    color: #fff;
   }
 `

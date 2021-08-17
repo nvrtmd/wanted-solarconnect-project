@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import Timer from 'Components/Timer/Timer'
-import InputBox from 'Components/Input/InputBox'
-import SortBox from 'Components/Sort/SortBox'
+import InputBox from 'Components/InputBox/InputBox'
+import SortBox from 'Components/SortBox/SortBox'
 
 export default function Main() {
   const [numArray, setNumArray] = useState([])
@@ -11,9 +11,7 @@ export default function Main() {
     <Root>
       <Container>
         <Timer korea />
-        <InputContainer>
-          <InputBox setNumArray={setNumArray} />
-        </InputContainer>
+        <InputBox setNumArray={setNumArray} />
         <SortBox numArray={numArray} mode="Ascending sort" />
         <SortBox numArray={numArray} mode="Descending sort" />
         <Timer us />
@@ -35,10 +33,4 @@ const Container = styled.div`
   background-color: rgba(82, 82, 82, 0.65);
   padding: 30px;
   border-radius: 30px;
-`
-
-const InputContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `
