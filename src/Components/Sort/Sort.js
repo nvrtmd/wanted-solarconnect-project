@@ -1,9 +1,9 @@
+import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Sort({ sendNum, setSendNum, mode }) {
-  let targetArr = sendNum.split(',').map(function (num) {
-    return parseInt(num)
-  })
+export default function Sort({ sendNumArr, mode }) {
+  console.log(sendNumArr)
+  let targetArr = sendNumArr.slice()
 
   const swap = (index) => {
     let temp = targetArr[index + 1]
@@ -12,7 +12,7 @@ export default function Sort({ sendNum, setSendNum, mode }) {
   }
 
   const sort = () => {
-    for (let i = 1; i < targetArr.length; i++) {
+    for (let i = 1; i < targetArr?.length; i++) {
       for (let j = i - 1; j >= 0; j--) {
         if (mode === 'Ascending sort') {
           if (targetArr[j + 1] < targetArr[j]) {
@@ -25,12 +25,17 @@ export default function Sort({ sendNum, setSendNum, mode }) {
         }
       }
     }
-    return targetArr.join(`, `)
+    return targetArr
   }
-  return <Root>{sendNum ? sort() : <div>{mode}</div>}</Root>
+  const defaultValue = mode
+  const sortedArray = sort()
+  const sortingData =
+    sortedArray.length > 0 ? sortedArray.join(', ') : defaultValue
+
+  return <SortWrapper>{sortingData}</SortWrapper>
 }
 
-const Root = styled.div`
+const SortWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -3,30 +3,27 @@ import styled from 'styled-components/macro'
 import Timer from 'Components/Timer/Timer'
 import Input from 'Components/Input/Input'
 import Sort from 'Components/Sort/Sort'
+import { isValidateNumber } from 'Utils/utils'
 
 export default function Main() {
-  const [inputNum, setInputNum] = useState('')
-  const [sendNum, setSendNum] = useState('')
-  const handleSortClick = () => {
-    let targetArr = sendNum.split(',')
-    for (let i = 0; i < targetArr.length; i++) {
-      console.log(parseInt(targetArr[i]))
-    }
-    setSendNum(inputNum)
-  }
+  const [sendNumArr, setSendNumArr] = useState([])
 
-  const handleResetClick = () => {
-    setSendNum('')
-    setInputNum('')
+  const handleSortClick = () => {
+    const validateNumArr = sendNumArr.filter(isValidateNumber).map(Number)
+    setSendNumArr(validateNumArr)
   }
 
   return (
     <Root>
       <div>
         <Timer korea />
-        <Sort sendNum={sendNum} setSendNum={setSendNum} mode="Ascending sort" />
+        <Sort
+          sendNumArr={sendNumArr}
+          setSendNumArr={setSendNumArr}
+          mode="Ascending sort"
+        />
         <InputContainer>
-          <Input inputNum={inputNum} setInputNum={setInputNum} />
+          <Input setSendNumArr={setSendNumArr} />
           <SortBtn
             onClick={() => {
               handleSortClick()
@@ -34,17 +31,10 @@ export default function Main() {
           >
             SORT
           </SortBtn>
-          <ResetBtn
-            onClick={() => {
-              handleResetClick()
-            }}
-          >
-            Reset
-          </ResetBtn>
         </InputContainer>
         <Sort
-          sendNum={sendNum}
-          setSendNum={setSendNum}
+          sendNumArr={sendNumArr}
+          setSendNumArr={setSendNumArr}
           mode="Descending sort"
         />
         <Timer us />
