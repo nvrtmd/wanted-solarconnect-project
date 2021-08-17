@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 
-export default function Input({ inputNum, setInputNum }) {
+export default function Input({ setSendNumsArr }) {
+  const [inputNum, setInputNum] = useState('')
+
   const handleChange = (e) => {
     setInputNum(e.target.value)
   }
 
+  const handleBlur = () => {
+    setSendNumsArr(inputNum.split(''))
+  }
+
   return (
     <div>
-      <InputBox
-        onChange={(e) => {
-          handleChange(e)
-        }}
-      />
+      <InputBox value={inputNum} onChange={handleChange} onBlur={handleBlur} />
     </div>
   )
 }

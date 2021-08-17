@@ -3,36 +3,33 @@ import styled from 'styled-components/macro'
 import Timer from 'Components/Timer/Timer'
 import Input from 'Components/Input/Input'
 import Sort from 'Components/Sort/Sort'
+import { isValidateNumber } from 'utils'
 
 export default function Main() {
-  const [inputNum, setInputNum] = useState('')
-  const [sendNum, setSendNum] = useState('')
+  const [sendNumsArr, setSendNumsArr] = useState([])
+
   const handleClick = () => {
-    let targetArr = sendNum.split(',')
-    for (let i = 0; i < targetArr.length; i++) {
-      console.log(parseInt(targetArr[i]))
-    }
-    setSendNum(inputNum)
+    const validateNumsArr = sendNumsArr.filter(isValidateNumber).map(Number)
+
+    setSendNumsArr(validateNumsArr)
   }
 
   return (
     <Root>
       <div>
         <Timer korea />
-        <Sort sendNum={sendNum} setSendNum={setSendNum} mode="Ascending sort" />
+        <Sort
+          sendNumsArr={sendNumsArr}
+          setSendNumsArr={setSendNumsArr}
+          mode="Ascending sort"
+        />
         <InputContainer>
-          <Input inputNum={inputNum} setInputNum={setInputNum} />
-          <HomeBtn
-            onClick={() => {
-              handleClick()
-            }}
-          >
-            SORT
-          </HomeBtn>
+          <Input setSendNumsArr={setSendNumsArr} />
+          <HomeBtn onClick={handleClick}>SORT</HomeBtn>
         </InputContainer>
         <Sort
-          sendNum={sendNum}
-          setSendNum={setSendNum}
+          sendNumsArr={sendNumsArr}
+          setSendNumsArr={setSendNumsArr}
           mode="Descending sort"
         />
         <Timer us />
