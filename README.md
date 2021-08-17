@@ -25,7 +25,9 @@
 
 ## ⛅Who Did What
 
-- 😺 백진수 : 인풋 유효성 검사, InputBox/SortBox 컴포넌트 수정, MainPage 수정
+- 😺 백진수 : 인풋 유효성 검사, InputBox/SortBox 컴포넌트 수정, MainPage 수정 <br/>
+     - feature/regex: https://github.com/nvrtmd/wanted-solarconnect-project/compare/feature/regex<br/>
+     - feature/sort-refactoring: https://github.com/nvrtmd/wanted-solarconnect-project/compare/feature/sort-refactoring
 - 🐥 민유지 : 타이머 작동 로직 구현, 정렬 로직 구현, 전반적인 UI 구성
 
 <br>
