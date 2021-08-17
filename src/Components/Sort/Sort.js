@@ -1,38 +1,12 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { sort } from 'utils'
 
-export default function Sort({ sendNumsArr, mode }) {
-  const targetArr = sendNumsArr.slice()
+export default function Sort({ numsArray, mode }) {
+  const sortedArray = sort(numsArray, mode)
+  const value = sortedArray.length ? sortedArray.join(', ') : mode
 
-  const swap = (index) => {
-    let temp = targetArr[index + 1]
-    targetArr[index + 1] = targetArr[index]
-    targetArr[index] = temp
-  }
-
-  const sort = () => {
-    for (let i = 1; i < targetArr.length; i++) {
-      for (let j = i - 1; j >= 0; j--) {
-        if (mode === 'Ascending sort') {
-          if (targetArr[j + 1] < targetArr[j]) {
-            swap(j)
-          }
-        } else {
-          if (targetArr[j + 1] > targetArr[j]) {
-            swap(j)
-          }
-        }
-      }
-    }
-    return targetArr
-  }
-
-  const defualtValue = mode
-  const sortedArray = sort()
-  const sortingData =
-    sortedArray.length > 0 ? sortedArray.join(', ') : defualtValue
-
-  return <SortWrapper>{sortingData}</SortWrapper>
+  return <SortWrapper>{value}</SortWrapper>
 }
 
 const SortWrapper = styled.div`
