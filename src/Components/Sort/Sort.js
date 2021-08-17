@@ -3,7 +3,6 @@ import styled from 'styled-components/macro'
 
 export default function Sort({ sendNumsArr, mode }) {
   const targetArr = sendNumsArr.slice()
-  console.log(targetArr)
 
   const swap = (index) => {
     let temp = targetArr[index + 1]
