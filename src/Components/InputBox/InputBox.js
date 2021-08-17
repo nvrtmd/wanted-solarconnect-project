@@ -16,6 +16,8 @@ export default function InputBox({ setNumsArray }) {
   }
 
   const handleClick = () => {
+    if (!inputNum.length) return
+
     const validateArray = inputNum
       .split(',')
       .filter(isValidateNumber)

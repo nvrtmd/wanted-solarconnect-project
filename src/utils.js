@@ -10,7 +10,9 @@ const swap = (targetArr, index) => {
   targetArr[index] = temp
 }
 
-export const sort = (targetArr, mode) => {
+export const sort = (numsArr, mode) => {
+  const targetArr = numsArr.slice()
+
   for (let i = 1; i < targetArr.length; i++) {
     for (let j = i - 1; j >= 0; j--) {
       if (mode === 'Ascending sort') {

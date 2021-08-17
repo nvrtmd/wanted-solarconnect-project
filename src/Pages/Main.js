@@ -11,9 +11,9 @@ export default function Main() {
     <Root>
       <div>
         <Timer korea />
-        <Sort numsArray={numsArray} mode="Ascending sort" />
         <InputBox setNumsArray={setNumsArray} />
-        <Sort numsArray={numsArray} mode="descending sort" />
+        <Sort numsArray={numsArray} mode="Ascending sort" />
+        <Sort numsArray={numsArray} mode="Descending sort" />
         <Timer us />
       </div>
     </Root>
