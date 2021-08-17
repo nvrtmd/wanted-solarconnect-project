@@ -4,10 +4,19 @@ import reset from 'styled-reset'
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
+  @font-face {
+  font-family: 'GmarketSansLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
   * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
   }
 
   html {
@@ -19,8 +28,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     width: 100%;
     min-height: 100%;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    /* font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; */
+    font-family: 'GmarketSansLight';
     font-size: 14px;
+    font-weight: 700;
     line-height: 1.43;
     color: #484848;
     background-color: #fff;
