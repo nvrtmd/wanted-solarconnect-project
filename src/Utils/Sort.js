@@ -1,4 +1,6 @@
-export function sort(targetArr, mode) {
+export function sort(numArray, mode) {
+  const targetArr = numArray.slice()
+
   const swap = (index) => {
     let temp = targetArr[index + 1]
     targetArr[index + 1] = targetArr[index]

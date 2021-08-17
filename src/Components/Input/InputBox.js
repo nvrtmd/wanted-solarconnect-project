@@ -16,6 +16,8 @@ export default function InputBox({ setNumArray }) {
   }
 
   const handleClick = () => {
+    if (!inputNum.length) return
+
     const validateArray = inputNum
       .split(',')
       .filter(isValidateNumber)
@@ -44,7 +46,7 @@ const Input = styled.input`
   background-repeat: no-repeat;
   padding: 12px 20px 12px 47px;
   transition: all 0.45s ease 0s;
-  /* margin: 30px 0; */
+  margin: 20px 0;
   &:focus {
     outline: none;
     border: 3px solid #0090b2;
